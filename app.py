@@ -23,9 +23,94 @@ def get_cached_insight(stats, insight_type):
     """
     return get_ai_insight(stats, insight_type)
 # --------------------------------------
+st.markdown("""
+<style>
+    /* Background gradient */
+    .stApp {
+        background: linear-gradient(135deg, #000000 0%, #1f1f1f 25%, #4b5563 50%, #d1d5db 75%, #ffffff 100%);
+    }
+    
+    /* Main content card */
+    .main-card {
+    margin: 1rem auto; /* Decrease the first number (1rem) to move the box higher */
+    padding: 2rem;     /* Decrease this to make the internal space tighter */
+    /* ... other styles ... */
+    }
+    
+    /* Typography */
+    .main-title {
+        background: linear-gradient(90deg, #e0d6d8, #ff6347, #FF795E);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 3.2rem;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+    }
+    
+    .subtitle {
+        text-align: center;
+        color: #94a3b8;
+        font-size: 1.3rem;
+        margin-bottom: 2.5rem;
+        font-weight: 400;
+    }
+    
+    .file-badge {
+        display: inline-block;
+        background: linear-gradient(90deg, #FFAE09, #7AF089);
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        margin: 1rem 0;
+    }
+
+    /* Results area */
+    .results-card {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        border-left: 6px solid;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-top: 2rem;
+        animation: fadeIn 0.5s ease;
+        color: #1e293b;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Expander styling fix */
+    .st-expander-header p {
+        color: #ff6347 !important;
+        font-weight: 600 !important;
+    }
+
+    /* Markdown headings */
+    .stMarkdown h3 {
+        color: #4865F6 !important;
+    }
+    
+    /* Button refinement */
+    .stButton button {
+        border: none !important;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+    }
+    .stButton button:hover {
+        transform: scale(1.02);
+    }
+</style>
+""", unsafe_allow_html=True)
+
 
 st.title("AI Workflow & Report Generator")
 st.markdown("### ⚡ Instant Business Analytics")
+
 
 # Initialize session state for stats_dict
 if 'stats_dict' not in st.session_state:
