@@ -109,7 +109,7 @@ st.markdown("""
 
 
 st.title("AI Workflow & Report Generator")
-st.markdown("### ⚡ Instant Business Analytics")
+
 
 
 # Initialize session state for stats_dict
